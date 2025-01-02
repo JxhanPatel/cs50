@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Search</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS";
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            margin-top: 10%;
+            text-align: left;
+            display: inline-block;
+        }
+        input[type="text"] {
+            display: flex;
+            width: 400px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #724fbc;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .links {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .links a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #724fbc;
+            font-size: 16px;
+        }
+        label {
+            font-size: 14px;
+        }
+        .dark-mode {
+            background-color: #2b2929;
+            color: #e0e0e0;
+        }
+        .dark-mode input[type="text"] {
+            background-color: #333333;
+            color: #e0e0e0;
+            border-color: #444444;
+        }
+        .dark-mode .links a {
+            color: #724fbc;
+        }
+        .dark-mode-toggle {
+            transition-duration: 0.4s;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            background:#ffffff ;
+            border-color: #724fbc;
+            color: #000000;
+            font-size: 16px;
+            border-radius: 30%
+        }
+        .dark-mode .dark-mode-toggle {
+            color: #000000;
+        }
+        .logo {
+            padding-bottom: 25px;
+            display: block;
+            margin-left: 4 auto;
+            margin-right: auto;
+            width: 30%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+    <div class="links">
+        <a href="index.html">Google Search</a>
+        <a href="image.html">Image Search</a>
+    </div>
+    <div class="container">
+        <img src="googol.png" alt="Google Logo" class="logo"
+        width="300" 
+        height="100">
+        <form action="https://www.google.com/search" method="get">
+            <label for="all">Find pages with all these words:</label>
+            <input type="text" name="as_q" id="all">
+            <label for="exact">Find pages with this exact word or phrase:</label>
+            <input type="text" name="as_epq" id="exact">
+            <label for="any">Find pages with any of these words:</label>
+            <input type="text" name="as_oq" id="any">
+            <label for="none">Find pages with none of these words:</label>
+            <input type="text" name="as_eq" id="none">
+            <br>
+            <input type="submit" value="Advanced Search">
+        </form>
+    </div>
+    <script>
+        
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const currentMode = document.body.classList.contains('dark-mode') ? 'Light' : 'Dark';
+            document.querySelector('.dark-mode-toggle').textContent = currentMode;
+        }
+
+        
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            toggleDarkMode();
+        }
+    </script>
+</body>
+</html>
