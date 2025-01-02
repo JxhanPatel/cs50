@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+    <div>
+        {{ content|safe }}
+    </div>
+
+    <div style="margin-top: 20px;">
+        <a href="{% url 'delete' title %}">
+            <button style="background-color: #aecdcf ; color: rgb(0, 0, 0); border: none; border-radius: 100px; padding: 5px 10px; cursor: pointer; margin-right: 10px;">
+                Delete
+            </button>
+        </a>
+        <a href="{% url 'edit' title=title %}">
+            <button style="background-color: #61614b; color: white; border: none; border-radius: 100px; padding: 5px 10px; cursor: pointer;">
+                Edit
+            </button>
+        </a>
+    </div>
+{% endblock %}

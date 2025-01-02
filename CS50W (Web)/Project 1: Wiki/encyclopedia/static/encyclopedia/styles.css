@@ -1,0 +1,111 @@
+body {
+    background-color: #090708;
+    color: #e0e0e0;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.sidebar {
+    background-color: #0f1919;
+    padding: 20px;
+    border-radius: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-logo {
+    display: block;
+    margin: 20px 0;
+    width: 100px;
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+}
+
+.search-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #bbdac0;
+    border: none;
+    border-radius: 15px;
+    color: #2d2b2d;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 140px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.home-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #96a388;
+    border: none;
+    border-radius: 55px;
+    color: #322f2f;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.create-btn, .random-btn {
+    width: 100%;
+    padding: 5px;
+    background-color: #61614b;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+.random-btn {
+    margin-right: 0;
+}
+
+.main {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.btn-danger {
+    background-color: red;
+    border-color: darkred;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: grey;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}

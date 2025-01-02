@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link type="text/css" href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="row">
+            <div class="sidebar col-lg-2 col-md-3">
+                <div class="btn-container">
+                    <a href="{% url 'index' %}">
+                        <button class="home-btn">Home</button>
+                    </a>
+                </div>
+                <img src="{% static 'encyclopedia/logo2.png' %}" alt="BiasPedia Logo" class="sidebar-logo">
+                <h2>BiasPedia</h2>
+                
+                <form action="{% url 'search' %}" method="get">
+                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                    <input type="submit" value="Search" class="search-btn">
+                </form>
+
+                <div class="btn-container">
+                    <a href="{% url 'new' %}">
+                        <button class="create-btn">Create Page</button>
+                    </a>
+                  </div>
+                 <div>
+                    <a href="{% url 'random' %}">
+                        <button class="random-btn">Random Page</button>
+                    </a>
+                </div>
+
+                {% block nav %}
+                {% endblock %}
+            </div>
+            <div class="main col-lg-10 col-md-9">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
