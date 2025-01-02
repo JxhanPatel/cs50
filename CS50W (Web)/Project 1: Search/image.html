@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Search</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS";
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 10%;
+        }
+        input[type="text"] {
+            width: 40%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 25px;
+            background-color: #724fbc;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .links {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .links a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #724fbc;
+            font-size: 16px;
+        }
+        .dark-mode {
+            background-color: #2b2929;
+            color: #e0e0e0;
+        }
+        .dark-mode input[type="text"] {
+            background-color: #333333;
+            color: #e0e0e0;
+            border-color: #444444;
+        }
+        .dark-mode .links a {
+            color: #724fbc;
+        }
+        .dark-mode-toggle {
+            transition-duration: 0.4s;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            background:#ffffff ;
+            border-color: #724fbc;
+            color: #000000;
+            font-size: 16px;
+            border-radius: 30%
+        }
+        .dark-mode .dark-mode-toggle {
+            color: #000000;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+    <div class="links">
+        <a href="index.html">Google Search</a>
+        <a href="advanced.html">Advanced Search</a>
+    </div>
+    
+    <div class="container">
+        <img src="googol2.png" alt="Google Logo" class="logo"
+        width="300" 
+        height="100">
+        <form action="https://www.google.com/search" method="get">
+            <input type="text" name="q" placeholder="Search Thy Image...">
+            <input type="hidden" name="tbm" value="isch">
+            <br>
+            <input type="submit" value="Image Search">
+        </form>
+    </div>
+    <script>
+        
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const currentMode = document.body.classList.contains('dark-mode') ? 'Light' : 'Dark';
+            document.querySelector('.dark-mode-toggle').textContent = currentMode;
+        }
+
+        
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            toggleDarkMode();
+        }
+    </script>
+</body>
+</html>
